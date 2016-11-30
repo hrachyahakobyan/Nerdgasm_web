@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="nerdgasm_server">
+    <serverData>
+      <paths name="nerdgasm_server">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/vendor" />
+            <excludedPath path="/tests" />
+            <excludedPath path="/runtime" />
+            <excludedPath path="/commands" />
+            <excludedPath path="/assets" />
+            <excludedPath local="true" path="$PROJECT_DIR$/vendor" />
+            <excludedPath local="true" path="$PROJECT_DIR$/tests" />
+            <excludedPath local="true" path="$PROJECT_DIR$/runtime" />
+            <excludedPath local="true" path="$PROJECT_DIR$/commands" />
+            <excludedPath local="true" path="$PROJECT_DIR$/assets" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
