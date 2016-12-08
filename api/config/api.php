@@ -100,6 +100,7 @@ $config = [
                         'GET <id:\d+>/articles' => 'articles',
                         'POST <id:\d+>/image' => 'image',
                         'DELETE <id:\d+>/image' => 'image',
+                        'GET <id:\d+>/threads' => 'threads'
                     ],
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/article'], 'pluralize' => false,

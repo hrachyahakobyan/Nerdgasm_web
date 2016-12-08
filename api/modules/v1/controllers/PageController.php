@@ -16,7 +16,7 @@ class PageController extends ActiveController
     {
         $behav = parent::behaviors();
         $behav['authenticator'] = [
-            'except' => ['view', 'index', 'articles'],
+            'except' => ['view', 'index', 'articles', 'threads'],
             'class' => HttpBearerAuth::className(),
         ];
         return $behav;
@@ -35,6 +35,11 @@ class PageController extends ActiveController
             'modelClass' => $this->modelClass,
             'checkAccess' => [$this, 'checkAccess'],
         ];
+        $actions['threads'] = [
+            'class' => 'app\api\actions\Page\ThreadsAction',
+            'modelClass' => $this->modelClass,
+            'checkAccess' => [$this, 'checkAccess'],
+        ];
         return $actions;
     }
 
@@ -42,6 +47,7 @@ class PageController extends ActiveController
     {
         $verbs = parent::verbs();
         $verbs['articles'] = ['GET'];
+        $verbs['threads'] = ['GET'];
         $verbs['image'] = ['POST', 'DELETE'];
         return $verbs;
     }
