@@ -16,7 +16,7 @@ class PageController extends ActiveController
     {
         $behav = parent::behaviors();
         $behav['authenticator'] = [
-            'except' => ['view', 'index', 'articles', 'threads'],
+            'except' => ['view', 'index', 'articles', 'threads', 'viewCategory'],
             'class' => HttpBearerAuth::className(),
         ];
         return $behav;
@@ -40,8 +40,18 @@ class PageController extends ActiveController
             'modelClass' => $this->modelClass,
             'checkAccess' => [$this, 'checkAccess'],
         ];
-        $actions['category'] = [
-            'class' => 'app\api\actions\Page\CategoryAction',
+        $actions['viewCategory'] = [
+            'class' => 'app\api\actions\Page\ViewCategoryAction',
+            'modelClass' => $this->modelClass,
+            'checkAccess' => [$this, 'checkAccess'],
+        ];
+        $actions['createCategory'] = [
+            'class' => 'app\api\actions\Page\CreateCategoryAction',
+            'modelClass' => $this->modelClass,
+            'checkAccess' => [$this, 'checkAccess'],
+        ];
+        $actions['deleteCategory'] = [
+            'class' => 'app\api\actions\Page\DeleteCategoryAction',
             'modelClass' => $this->modelClass,
             'checkAccess' => [$this, 'checkAccess'],
         ];
@@ -54,7 +64,9 @@ class PageController extends ActiveController
         $verbs['articles'] = ['GET'];
         $verbs['threads'] = ['GET'];
         $verbs['image'] = ['POST', 'DELETE'];
-        $verbs['category'] = ['POST', 'DELETE', 'GET'];
+        $verbs['createCategory'] = ['POST'];
+        $verbs['viewCategory'] = ['GET'];
+        $verbs['deleteCategory'] = ['DELETE'];
         return $verbs;
     }
 }

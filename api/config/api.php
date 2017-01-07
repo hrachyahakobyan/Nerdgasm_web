@@ -101,9 +101,9 @@ $config = [
                         'POST <id:\d+>/image' => 'image',
                         'DELETE <id:\d+>/image' => 'image',
                         'GET <id:\d+>/threads' => 'threads',
-                        'GET <id:\d+>/category' => 'category',
-                        'POST <id:\d+>/category' => 'category',
-                        'DELETE <id:\d+>/category' => 'category'
+                        'GET <id:\d+>/category' => 'viewCategory',
+                        'POST <id:\d+>/category' => 'createCategory',
+                        'DELETE <id:\d+>/category' => 'deleteCategory'
                     ],
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/article'], 'pluralize' => false,
