@@ -110,7 +110,7 @@ $config = [
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/comment'], 'pluralize' => false,
                 ],
-                ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/pagecategory'], 'pluralize' => false,
+                ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/pageCategory'], 'pluralize' => false,
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/board'], 'pluralize' => false,
                     'extraPatterns' => [

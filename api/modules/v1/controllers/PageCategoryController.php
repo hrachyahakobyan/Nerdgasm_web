@@ -6,7 +6,7 @@ use yii\filters\auth\HttpBearerAuth;
 use yii\rest\ActiveController;
 
 
-class PagecategoryController extends ActiveController
+class PageCategoryController extends ActiveController
 {
 
     public $modelClass = 'app\models\PageCategory';
