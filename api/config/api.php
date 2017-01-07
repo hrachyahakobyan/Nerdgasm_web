@@ -100,7 +100,10 @@ $config = [
                         'GET <id:\d+>/articles' => 'articles',
                         'POST <id:\d+>/image' => 'image',
                         'DELETE <id:\d+>/image' => 'image',
-                        'GET <id:\d+>/threads' => 'threads'
+                        'GET <id:\d+>/threads' => 'threads',
+                        'GET <id:\d+>/category' => 'category',
+                        'POST <id:\d+>/category' => 'category',
+                        'DELETE <id:\d+>/category' => 'category'
                     ],
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/article'], 'pluralize' => false,
@@ -109,8 +112,6 @@ $config = [
                     ],
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/comment'], 'pluralize' => false,
-                ],
-                ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/pageCategory'], 'pluralize' => false,
                 ],
                 ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/board'], 'pluralize' => false,
                     'extraPatterns' => [

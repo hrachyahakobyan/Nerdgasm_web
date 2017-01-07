@@ -23,6 +23,11 @@ class PageCategory extends \yii\db\ActiveRecord
         return 'page_category';
     }
 
+    public static function primaryKey()
+    {
+        return ['page_id', 'category_id'];
+    }
+
     /**
      * @inheritdoc
      */

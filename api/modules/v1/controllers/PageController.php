@@ -40,6 +40,11 @@ class PageController extends ActiveController
             'modelClass' => $this->modelClass,
             'checkAccess' => [$this, 'checkAccess'],
         ];
+        $actions['category'] = [
+            'class' => 'app\api\actions\Page\CategoryAction',
+            'modelClass' => $this->modelClass,
+            'checkAccess' => [$this, 'checkAccess'],
+        ];
         return $actions;
     }
 
@@ -49,6 +54,7 @@ class PageController extends ActiveController
         $verbs['articles'] = ['GET'];
         $verbs['threads'] = ['GET'];
         $verbs['image'] = ['POST', 'DELETE'];
+        $verbs['category'] = ['POST', 'DELETE', 'GET'];
         return $verbs;
     }
 }
