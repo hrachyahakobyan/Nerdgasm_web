@@ -9,8 +9,9 @@ namespace app\api\actions\Articles;
 
 use Yii;
 use yii\rest\Action;
-use yii\data\ActiveDataProvider;
+use yii\data\SqlDataProvider;
 use yii\db\Query;
+use app\models\Comment;
 
 /**
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -24,10 +25,11 @@ class CommentsAction extends Action
         if ($this->checkAccess) {
             call_user_func($this->checkAccess, $this->id, $model);
         }
+
         $connection = Yii::$app->getDb();
         $command = $connection->createCommand('
            SELECT C.id, C.text, C.content_id, C.created_at, C.updated_at,
-           C.parent_id, user.id as user_id, user.username, user.firstname, user.lastname, user.image,
+           C.parent_id, user.id as user_id, user.username, user.firstname, user.lastname, user.avatar,
            COUNT(comment_upvote.comment_id) as upvotes FROM
             (SELECT * FROM comment WHERE comment.content_id = :id) as C
             JOIN user ON C.user_id = user.id

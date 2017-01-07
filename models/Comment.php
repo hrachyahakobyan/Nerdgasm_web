@@ -32,7 +32,6 @@ class Comment extends \app\models\Content
     {
         return 'comment';
     }
-
     /**
      * @inheritdoc
      */

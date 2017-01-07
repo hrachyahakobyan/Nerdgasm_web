@@ -6,10 +6,10 @@ use yii\filters\auth\HttpBearerAuth;
 use yii\rest\ActiveController;
 
 
-class PageCategoryController extends ActiveController
+class PagecategoryController extends ActiveController
 {
 
-    public $modelClass = 'app\models\Article';
+    public $modelClass = 'app\models\PageCategory';
 
     public function behaviors()
     {
