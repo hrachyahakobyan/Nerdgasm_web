@@ -42,9 +42,9 @@ class DeleteCategoryAction extends Action
             return;
         }
 
-        $pageCategory = PageCategory::findOne(['page_id' => $page->id,
+        $pageCategory = PageCategory::findOne(['page_id' => $id,
             'category_id' => $post['category_id']]);
-        if (empty($content))
+        if (empty($pageCategory))
         {
             throw new \yii\web\NotFoundHttpException('Page Category not found');
         }

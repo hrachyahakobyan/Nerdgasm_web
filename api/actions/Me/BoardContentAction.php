@@ -66,15 +66,15 @@ class BoardContentAction extends Action
         // Delete content
         else
         {
-            $get = Yii::$app->request->get();
-            if (!isset($get['content_id']))
+            $post = Yii::$app->request->post();
+            if (!isset($post['content_id']))
             {
                 throw new \yii\web\UnprocessableEntityHttpException();
                 return;
             }
 
             $content = BoardContent::findOne(['board_id' => $board->id,
-                'content_id' => $get['content_id']]);
+                'content_id' => $post['content_id']]);
             if (empty($content))
             {
                 throw new \yii\web\NotFoundHttpException('Content not found');

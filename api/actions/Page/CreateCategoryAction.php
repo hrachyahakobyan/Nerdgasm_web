@@ -13,6 +13,7 @@ use yii\rest\Action;
 use yii\db\Query;
 use app\models\PageCategory;
 use app\models\Page;
+use yii\helpers\Url;
 
 /**
  * Class AddCategoryAction
@@ -23,6 +24,7 @@ use app\models\Page;
 
 class CreateCategoryAction extends Action
 {
+    public $viewAction = 'view';
     public function run($id)
     {
         if ($this->checkAccess)
