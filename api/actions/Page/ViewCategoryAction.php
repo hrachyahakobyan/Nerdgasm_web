@@ -34,6 +34,6 @@ class ViewCategoryAction extends Action
         {
             throw new \yii\web\NotFoundHttpException('Page not found');
         }
-        return $page->getCategories();
+        return $page->getCategories()->all();
     }
 }
